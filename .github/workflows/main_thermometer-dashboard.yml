@@ -52,4 +52,4 @@ jobs:
           app-name: 'thermometer-dashboard'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F8300F56EBF8465F9D1D981CE9A30660 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_21CC39DE3A4449589E52AF66CDE89085 }}
