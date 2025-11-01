@@ -5,6 +5,7 @@ export default async function Home() {
       headers: {
         "x-api-key": process.env.API_KEY,
       } as HeadersInit,
+      cache: "no-store"
     }
   );
   const data = await response.json();
