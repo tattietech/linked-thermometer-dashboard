@@ -72,8 +72,8 @@ export default function SensorList() {
   }
 
   return (
-    <section className="w-full max-w-3xl">
-      <header className="mb-6 flex w-full items-center justify-between">
+    <section className="w-[80%] max-w-3xl">
+      {/* <header className="mb-6 flex w-full items-center justify-between">
         <div>
           <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
             Sensors
@@ -102,7 +102,7 @@ export default function SensorList() {
             </svg>
           </button>
         </div>
-      </header>
+      </header> */}
 
       {loading && !data ? (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -169,21 +169,11 @@ export default function SensorList() {
                         {sensor.humidity}%
                       </div>
                     </div>
-
                     <div className={textClass}>
                       <time>
                         {time}
                       </time>
                     </div>
-                  </div>
-
-                  <div className="flex shrink-0 flex-col items-center justify-center gap-2">
-                    <svg className="h-10 w-10 text-zinc-300 dark:text-zinc-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <path d="M12 2v6" strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M8 8a4 4 0 0 0 8 0" strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M6 22h12" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    <div className="text-xs text-zinc-500 dark:text-zinc-400">Device</div>
                   </div>
                 </div>
               </article>
