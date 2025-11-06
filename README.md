@@ -45,7 +45,7 @@ linked-thermometer-dashboard/
 │   └── SensorList.tsx         # Main sensor display component
 ├── public/                    # Static assets
 ├── next.config.ts             # Next.js configuration
-├── tailwind.config.js         # Tailwind CSS configuration
+├── postcss.config.mjs         # PostCSS and Tailwind CSS configuration
 └── package.json               # Project dependencies
 ```
 
@@ -82,9 +82,10 @@ npm install
 ```
 
 3. Set up environment variables:
+Create a `.env.local` file in the root directory and add your API credentials:
 ```bash
-cp .env.example .env.local
-# Edit .env.local with your API credentials
+echo "API_ENDPOINT=your_api_endpoint_url" > .env.local
+echo "API_KEY=your_api_key" >> .env.local
 ```
 
 ### Development
