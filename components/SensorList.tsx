@@ -51,7 +51,7 @@ export default function SensorList() {
     if (min < 60) return `${min}m ago`;
     const hr = Math.floor(min / 60);
     if (hr < 24) return `${hr}h ago`;
-    
+
     return d.toLocaleString("en-GB").split(', ')[0];
   };
 
@@ -72,42 +72,11 @@ export default function SensorList() {
   }
 
   return (
-    <section className="w-[80%] max-w-3xl">
-      {/* <header className="mb-6 flex w-full items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
-            Sensors
-          </h1>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400">
-            Live updates every 60s
-          </p>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <button
-            onClick={handleManualRefresh}
-            className="inline-flex items-center gap-2 rounded-md bg-zinc-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-zinc-800 dark:bg-zinc-200 dark:text-zinc-900 dark:hover:bg-zinc-100"
-            aria-pressed="false"
-          >
-            Refresh
-            <svg
-              className="h-4 w-4"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M21 12a9 9 0 1 1-3.9-7.1" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M21 3v6h-6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-        </div>
-      </header> */}
-
+    <section className="w-full max-w-3xl">
       {loading && !data ? (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="animate-pulse rounded-lg border bg-white p-4 shadow-sm dark:bg-zinc-900">
+            <div key={i} className="animate-pulse rounded-lg border bg-white shadow-sm dark:bg-zinc-900">
               <div className="h-5 w-3/4 rounded bg-zinc-200 dark:bg-zinc-700" />
               <div className="mt-3 h-3 w-1/2 rounded bg-zinc-200 dark:bg-zinc-700" />
               <div className="mt-2 h-3 w-1/3 rounded bg-zinc-200 dark:bg-zinc-700" />
@@ -135,7 +104,7 @@ export default function SensorList() {
             return (
               <article
                 key={sensor.deviceName}
-                className="relative overflow-hidden rounded-lg border border-zinc-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900"
+                className="relative overflow-hidden rounded-lg border border-zinc-100 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div>
@@ -143,15 +112,11 @@ export default function SensorList() {
                       {sensor.deviceName}
                     </h2>
 
-                    <div className="mt-1 flex items-center gap-3">
+                    <div className="mt-1 flex items-center">
                       <div>
                         <p className="text-sm text-zinc-500 dark:text-zinc-400">Temperature</p>
-                        <div className="mt-2 flex items-center gap-3">
+                        <div className="mt-2 flex items-center">
                           <div className="flex items-baseline gap-2">
-                            <span className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
-                              {sensor.temperature}°C
-                            </span>
-                            <TempBadge temp={sensor.temperature} />
                           </div>
                         </div>
                       </div>
@@ -174,6 +139,12 @@ export default function SensorList() {
                         {time}
                       </time>
                     </div>
+                  </div>
+                  <div className="flex shrink-0 flex-col items-center justify-center gap-2">
+                    <span className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+                      {sensor.temperature}°C
+                    </span>
+                    <TempBadge temp={sensor.temperature} />
                   </div>
                 </div>
               </article>
